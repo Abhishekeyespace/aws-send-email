@@ -81,7 +81,7 @@ OR
 
 * **Sample Request and Response:**
 
-## Example Request
+#### Example Request
 
 ```
 POST test/contact HTTP/1.1
@@ -97,7 +97,7 @@ Content-Length: 35
 }
 ```
 
-## Example Response
+#### Example Response
 
 ```json
 {
