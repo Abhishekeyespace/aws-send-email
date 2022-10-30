@@ -71,6 +71,14 @@ The API uses a Bearer authentication (also called token authentication).The clie
 	"Message": "User is not authorized to access this resource with an explicit deny"
 }
 ```
+  OR
+  
+ ```
+{ 
+  	"statusCode": 400,
+	"Message": "Invalid request body"
+}
+```
 
 
 * **Sample Request and Response:**
