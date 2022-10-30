@@ -46,28 +46,27 @@ The API uses a Bearer authentication (also called token authentication).The clie
 ```
 * **Success Response:**
   
-
-
-  * **Code:** 200 <br />
-    **Content:** 
-    ```
-    "body": "Email ID: 0108018426760091-4fd1f131-7def-4258-9013-e2df47d5a5d2-000000 sent from Lambda."
-    ```
+```
+{
+	"statusCode": 200,
+	"body": "Email ID: 0108018426760091-4fd1f131-7def-4258-9013-e2df47d5a5d2-000000 sent from Lambda."
+}
+```
 
  
 * **Error Response:**
 
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "Log in" }`
+```
+{ 
+  "statusCode": 403,
+	"Message": "User is not authorized to access this resource with an explicit deny"
+}
+```
 
   OR
 
-  * **Code:** 422 UNPROCESSABLE ENTRY <br />
-    **Content:** `{ error : "Email Invalid" }`
 
-* **Sample Call:**
+* **Sample Request and Response:**
 
   <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
 
