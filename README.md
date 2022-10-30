@@ -8,7 +8,7 @@ This API belong to the Representational State Transfer (REST) category. The API 
 
 * **Authentication**
 
-The API uses a Bearer authentication (also called token authentication).The client must send this token in the Authorization header (authorizationToken) when making requests to resources.
+	The API uses a Bearer authentication (also called token authentication).The client must send this token in the Authorization header  	(authorizationToken) when making requests to resources.
 
 * **URL**
 
