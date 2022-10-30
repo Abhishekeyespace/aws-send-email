@@ -6,8 +6,8 @@ Send-contact-email is a cloud-based internal API developed to support developers
 
 This API belong to the Representational State Transfer (REST) category. The API also supports Cross-Origin Resource Sharing (CORS).
 
-**Authentication**
-----
+* **Authentication**
+
 The API uses a Bearer authentication (also called token authentication).The client must send this token in the Authorization header (authorizationToken) when making requests to resources.
 
 * **URL**
