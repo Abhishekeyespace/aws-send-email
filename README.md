@@ -21,7 +21,7 @@ The API uses a Bearer authentication (also called token authentication).The clie
 
 
 * **Data Params**
-```
+```json
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
     "title": "User",
@@ -46,7 +46,7 @@ The API uses a Bearer authentication (also called token authentication).The clie
 ```
 * **Success Response:**
   
-```
+```json
 {
 	"statusCode": 200,
 	"body": "Email ID: 0108018426760091-4fd1f131-7def-4258-9013-e2df47d5a5d2-000000 sent from Lambda."
@@ -56,35 +56,57 @@ The API uses a Bearer authentication (also called token authentication).The clie
  
 * **Error Response:**
 
-```
+```json
 { 
   	"statusCode": 500,
 	"Message": ""\"Failed to send email: An error occurred (InvalidParameterValue) when calling the SendEmail operation: Invalid email address .\"""
 }
 ```
-
-  OR
+OR
   
- ```
+```json
 { 
   	"statusCode": 403,
 	"Message": "User is not authorized to access this resource with an explicit deny"
 }
 ```
-  OR
+OR
   
- ```
+```json
 { 
   	"statusCode": 400,
 	"Message": "Invalid request body"
 }
 ```
 
-
 * **Sample Request and Response:**
 
-  <_Just a sample call to your endpoint in a runnable format ($.ajax call or a curl request) - this makes life easier and more predictable._> 
+## Example Request
+
+```
+POST test/contact HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Content-Length: 35
+
+{
+	"email-recipient" : "",
+	"email-recipient-cc" : "abhishek+ses1@eye.space",
+	"email-recipient-bcc" : "abhishek+ses2@eye.space",
+	"email-sender":"abhishek@eye.space"
+}
+```
+
+## Example Response
+
+```json
+{
+	"statusCode": 200,
+	"body": "Email ID: 010801842b266d23-0d9cf452-34b3-4718-a8e1-ea7cb2bd8b02-000000 sent from Lambda."
+}
+
+```
+  
 
 * **Notes:**
 
-  <_This is where all uncertainties, commentary, discussion etc. can go. I recommend timestamping and identifying oneself when leaving comments here._> 
