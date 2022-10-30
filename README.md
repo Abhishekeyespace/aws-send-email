@@ -6,13 +6,17 @@ Send-contact-email is a cloud-based internal API developed to support developers
 
 This API belong to the Representational State Transfer (REST) category. The API also supports Cross-Origin Resource Sharing (CORS).
 
+**Authentication**
+----
+The API uses a Bearer authentication (also called token authentication).The client must send this token in the Authorization header (authorizationToken) when making requests to resources.
+
 * **URL**
 
   https://3mhd6g2pwg.execute-api.ap-southeast-2.amazonaws.com/test/contact
 
 * **Method:**
   
-  <_The request type_>
+  `POST`
 
   `GET` | `POST` | `DELETE` | `PUT`
   
@@ -29,15 +33,39 @@ This API belong to the Representational State Transfer (REST) category. The API 
    `photo_id=[alphanumeric]`
 
 * **Data Params**
-
-  <_If making a post request, what should the body payload look like? URL Params rules apply here too._>
-
+```
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "User",
+    "type": "object",
+    "properties": {
+        "email-recipient": {
+            "type": "string"
+        },
+        "email-recipient-cc": {
+            "type": "string"
+        },
+        "email-recipient-bcc": {
+            "type": "string"
+        },
+        "email-sender":{
+            "type":"string"
+        }
+        
+    },
+    "required": ["email-recipient","email-sender"]
+```
 * **Success Response:**
   
-  <_What should the status code be on success and is there any returned data? This is useful when people need to to know what their callbacks should expect!_>
+
 
   * **Code:** 200 <br />
-    **Content:** `{ id : 12 }`
+    **Content:** 
+    ```
+    {
+	"body": "Email ID: 0108018426760091-4fd1f131-7def-4258-9013-e2df47d5a5d2-000000 sent from Lambda."
+  }
+```
  
 * **Error Response:**
 
