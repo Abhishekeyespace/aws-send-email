@@ -1,12 +1,14 @@
 # aws-send-email
 
-**Title**
+**Overview**
 ----
-  <_Additional information about your API call. Try to use verbs that match both request type (fetching vs modifying) and plurality (one vs multiple)._>
+Send-contact-email is a cloud-based internal API developed to support developers for the task of sending automated Emails with Amazon Simple Email Service (AWS SES).
+
+This API belong to the Representational State Transfer (REST) category. The API also supports Cross-Origin Resource Sharing (CORS).
 
 * **URL**
 
-  <_The URL Structure (path only, no root url)_>
+  https://3mhd6g2pwg.execute-api.ap-southeast-2.amazonaws.com/test/contact
 
 * **Method:**
   
