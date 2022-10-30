@@ -58,12 +58,19 @@ The API uses a Bearer authentication (also called token authentication).The clie
 
 ```
 { 
-  "statusCode": 403,
-	"Message": "User is not authorized to access this resource with an explicit deny"
+  "statusCode": 500,
+	"Message": ""\"Failed to send email: An error occurred (InvalidParameterValue) when calling the SendEmail operation: Invalid email address .\"""
 }
 ```
 
   OR
+  
+ ```
+{ 
+  "statusCode": 403,
+"Message": "User is not authorized to access this resource with an explicit deny"
+}
+```
 
 
 * **Sample Request and Response:**
