@@ -18,19 +18,7 @@ The API uses a Bearer authentication (also called token authentication).The clie
   
   `POST`
 
-  `GET` | `POST` | `DELETE` | `PUT`
-  
-*  **URL Params**
 
-   <_If URL params exist, specify them in accordance with name mentioned in URL section. Separate into optional and required. Document data constraints._> 
-
-   **Required:**
- 
-   `id=[integer]`
-
-   **Optional:**
- 
-   `photo_id=[alphanumeric]`
 
 * **Data Params**
 ```
@@ -54,6 +42,7 @@ The API uses a Bearer authentication (also called token authentication).The clie
         
     },
     "required": ["email-recipient","email-sender"]
+}
 ```
 * **Success Response:**
   
@@ -62,10 +51,9 @@ The API uses a Bearer authentication (also called token authentication).The clie
   * **Code:** 200 <br />
     **Content:** 
     ```
-    {
-	"body": "Email ID: 0108018426760091-4fd1f131-7def-4258-9013-e2df47d5a5d2-000000 sent from Lambda."
-  }
-```
+    "body": "Email ID: 0108018426760091-4fd1f131-7def-4258-9013-e2df47d5a5d2-000000 sent from Lambda."
+    ```
+
  
 * **Error Response:**
 
