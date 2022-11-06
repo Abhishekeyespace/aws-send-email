@@ -1,5 +1,6 @@
-title: Send Email REST API
-description: Documentation for send email API
+title: SEND EMAIL REST API
 logo: email.png
+description: Documentation for send email API.
 show_downloads: false
+google_analytics:
 theme: jekyll-theme-minimal
