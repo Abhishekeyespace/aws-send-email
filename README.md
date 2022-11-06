@@ -1,4 +1,4 @@
-# aws-send-email
+# API Documentation
 
 **Overview**
 ----
