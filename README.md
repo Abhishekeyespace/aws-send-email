@@ -12,7 +12,9 @@ This API belong to the Representational State Transfer (REST) category. The API 
 
 * **URL**
 
-  https://3mhd6g2pwg.execute-api.ap-southeast-2.amazonaws.com/test/contact
+```
+https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/
+```
 
 * **Method:**
   
@@ -86,6 +88,7 @@ https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/sendEmail
     },
     "required": ["email-recipient","email-sender"]
 }
+```
 
 #### Example Request
 
@@ -137,6 +140,7 @@ https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/send-email-bulk
     },
     "required": ["email-recipient","email-sender"]
 }
+```
 
 
 #### Example Request
@@ -189,6 +193,7 @@ https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/send-bulk-templ
     },
     "required": ["email-recipient","email-sender"]
 }
+```
   
 #### Example Request
 
