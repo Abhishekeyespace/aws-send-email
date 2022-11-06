@@ -187,10 +187,21 @@ https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/send-bulk-templ
         },
         "email-sender":{
             "type":"string"
-        }
-        
-    },
-    "required": ["email-recipient","email-sender"]
+        },
+        "templateData":{
+        	"properties":{
+        		"name":{
+        			"type":"string"
+        		},
+        		"region":{
+        			"type":"string"
+        		}
+
+        	}
+        },
+        "required": ["email-recipient","email-sender","templateData"]
+	}
+
 }
 ```
   
