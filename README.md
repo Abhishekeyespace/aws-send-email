@@ -21,7 +21,6 @@ https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/
   `POST`
 
 
-```
 * **Success Response:**
   
 ```json
