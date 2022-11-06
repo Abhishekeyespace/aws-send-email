@@ -215,8 +215,11 @@ Content-Length: 35
 
 {
 	"email-sender":"abhishek@eye.space",
-	"email-recipient":["das.abhishek15@gmail.com","abhishek+ses2@eye.space","abhishek+ses1@eye.space"]
-
+	"email-recipient":["abhishek+ses1@eye.space","abhishek+ses2@eye.space"],
+	"templateData":{
+		"name":"Innovative Eyecare",
+		"region":"AU"
+	}
 }
 
 ```
