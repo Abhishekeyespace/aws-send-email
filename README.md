@@ -19,30 +19,6 @@ This API belong to the Representational State Transfer (REST) category. The API 
   `POST`
 
 
-
-* **Data Params**
-```json
-{
-  "$schema": "http://json-schema.org/draft-04/schema#",
-    "title": "User",
-    "type": "object",
-    "properties": {
-        "email-recipient": {
-            "type": "string"
-        },
-        "email-recipient-cc": {
-            "type": "string"
-        },
-        "email-recipient-bcc": {
-            "type": "string"
-        },
-        "email-sender":{
-            "type":"string"
-        }
-        
-    },
-    "required": ["email-recipient","email-sender"]
-}
 ```
 * **Success Response:**
   
@@ -79,7 +55,37 @@ OR
 }
 ```
 
-* **Sample Request and Response:**
+* **Send email to a single contact with cc and bcc**
+
+```
+https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/sendEmail
+```
+
+
+#### JSON body schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "email addresses",
+    "type": "object",
+    "properties": {
+        "email-recipient": {
+            "type": "string"
+        },
+        "email-recipient-cc": {
+            "type": "string"
+        },
+        "email-recipient-bcc": {
+            "type": "string"
+        },
+        "email-sender":{
+            "type":"string"
+        }
+        
+    },
+    "required": ["email-recipient","email-sender"]
+}
 
 #### Example Request
 
@@ -106,7 +112,128 @@ Content-Length: 35
 }
 
 ```
+
+* **Send email to a multiple contacts**
+
+```
+https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/send-email-bulk
+```
+
+#### JSON body schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "email addresses",
+    "type": "array",
+    "properties": {
+        "email-recipient": {
+            "type": "string"
+        },
+        "email-sender":{
+            "type":"string"
+        }
+        
+    },
+    "required": ["email-recipient","email-sender"]
+}
+
+
+#### Example Request
+
+```json
+POST test/contact HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Content-Length: 35
+
+{
+	"email-sender":"abhishek@eye.space",
+	"email-recipient":["das.abhishek15@gmail.com","abhishek+ses2@eye.space","abhishek+ses1@eye.space"]
+
+}
+
+```
+
+#### Example Response
+
+```json
+{
+	"statusCode": 200,
+	"body": "Email ID: 010801842b266d23-0d9cf452-34b3-4718-a8e1-ea7cb2bd8b02-000000 sent from Lambda."
+}
+
+```
+
+* **Send templated email to a multiple contacts**
+
+```
+https://81qv40h5n6.execute-api.ap-southeast-2.amazonaws.com/test/send-bulk-templated-email
+```
+	
+#### JSON body schema
+
+```json
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "email addresses",
+    "type": "array",
+    "properties": {
+        "email-recipient": {
+            "type": "string"
+        },
+        "email-sender":{
+            "type":"string"
+        }
+        
+    },
+    "required": ["email-recipient","email-sender"]
+}
   
+#### Example Request
+
+```json
+POST test/contact HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Content-Length: 35
+
+{
+	"email-sender":"abhishek@eye.space",
+	"email-recipient":["das.abhishek15@gmail.com","abhishek+ses2@eye.space","abhishek+ses1@eye.space"]
+
+}
+
+```
+
+#### Example Respone
+
+```json
+{
+	"Status": [
+		{
+			"Status": "Success",
+			"MessageId": "010801844bd48c02-f47cb54e-7d52-4ab9-bde6-a9ef8aa9a28c-000000"
+		}
+	],
+	"ResponseMetadata": {
+		"RequestId": "c153bb1c-be68-44c2-811c-0e31174aec4f",
+		"HTTPStatusCode": 200,
+		"HTTPHeaders": {
+			"date": "Sun, 06 Nov 2022 07:25:31 GMT",
+			"content-type": "text/xml",
+			"content-length": "473",
+			"connection": "keep-alive",
+			"x-amzn-requestid": "c153bb1c-be68-44c2-811c-0e31174aec4f"
+		},
+		"RetryAttempts": 0
+	}
+}
+```
+
+
 
 * **Notes:**
+
+AWS SES allows you to send 50 recipients at a time. For e.g if you have 200k recipients you would have to make 4k API calls.
 
